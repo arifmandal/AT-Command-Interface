@@ -118,5 +118,10 @@ namespace AT_Commands_Control
             txtReceiver.Text = string.Empty; 
 
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

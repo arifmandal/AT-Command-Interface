@@ -47,8 +47,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnAT = new System.Windows.Forms.Button();
+            this.btnVERSION = new System.Windows.Forms.Button();
+            this.btnADDRESS = new System.Windows.Forms.Button();
+            this.btnNAME = new System.Windows.Forms.Button();
+            this.btnPASSWORD = new System.Windows.Forms.Button();
+            this.btnUART = new System.Windows.Forms.Button();
+            this.btnROLE = new System.Windows.Forms.Button();
+            this.btnRESTORE = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -226,11 +236,102 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnRESTORE);
+            this.groupBox3.Controls.Add(this.btnROLE);
+            this.groupBox3.Controls.Add(this.btnUART);
+            this.groupBox3.Controls.Add(this.btnPASSWORD);
+            this.groupBox3.Controls.Add(this.btnNAME);
+            this.groupBox3.Controls.Add(this.btnADDRESS);
+            this.groupBox3.Controls.Add(this.btnVERSION);
+            this.groupBox3.Controls.Add(this.btnAT);
+            this.groupBox3.Location = new System.Drawing.Point(565, 36);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(330, 272);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "AT Commands";
+            // 
+            // btnAT
+            // 
+            this.btnAT.Location = new System.Drawing.Point(22, 37);
+            this.btnAT.Name = "btnAT";
+            this.btnAT.Size = new System.Drawing.Size(121, 37);
+            this.btnAT.TabIndex = 0;
+            this.btnAT.Text = "AT";
+            this.btnAT.UseVisualStyleBackColor = true;
+            // 
+            // btnVERSION
+            // 
+            this.btnVERSION.Location = new System.Drawing.Point(22, 86);
+            this.btnVERSION.Name = "btnVERSION";
+            this.btnVERSION.Size = new System.Drawing.Size(121, 37);
+            this.btnVERSION.TabIndex = 1;
+            this.btnVERSION.Text = "VERSION";
+            this.btnVERSION.UseVisualStyleBackColor = true;
+            // 
+            // btnADDRESS
+            // 
+            this.btnADDRESS.Location = new System.Drawing.Point(22, 141);
+            this.btnADDRESS.Name = "btnADDRESS";
+            this.btnADDRESS.Size = new System.Drawing.Size(121, 37);
+            this.btnADDRESS.TabIndex = 2;
+            this.btnADDRESS.Text = "ADDRESS";
+            this.btnADDRESS.UseVisualStyleBackColor = true;
+            // 
+            // btnNAME
+            // 
+            this.btnNAME.Location = new System.Drawing.Point(22, 197);
+            this.btnNAME.Name = "btnNAME";
+            this.btnNAME.Size = new System.Drawing.Size(121, 37);
+            this.btnNAME.TabIndex = 3;
+            this.btnNAME.Text = "NAME";
+            this.btnNAME.UseVisualStyleBackColor = true;
+            // 
+            // btnPASSWORD
+            // 
+            this.btnPASSWORD.Location = new System.Drawing.Point(191, 37);
+            this.btnPASSWORD.Name = "btnPASSWORD";
+            this.btnPASSWORD.Size = new System.Drawing.Size(121, 37);
+            this.btnPASSWORD.TabIndex = 4;
+            this.btnPASSWORD.Text = "PASSWORD";
+            this.btnPASSWORD.UseVisualStyleBackColor = true;
+            // 
+            // btnUART
+            // 
+            this.btnUART.Location = new System.Drawing.Point(191, 89);
+            this.btnUART.Name = "btnUART";
+            this.btnUART.Size = new System.Drawing.Size(121, 37);
+            this.btnUART.TabIndex = 5;
+            this.btnUART.Text = "UART";
+            this.btnUART.UseVisualStyleBackColor = true;
+            // 
+            // btnROLE
+            // 
+            this.btnROLE.Location = new System.Drawing.Point(191, 141);
+            this.btnROLE.Name = "btnROLE";
+            this.btnROLE.Size = new System.Drawing.Size(121, 37);
+            this.btnROLE.TabIndex = 6;
+            this.btnROLE.Text = "ROLE";
+            this.btnROLE.UseVisualStyleBackColor = true;
+            // 
+            // btnRESTORE
+            // 
+            this.btnRESTORE.Location = new System.Drawing.Point(191, 197);
+            this.btnRESTORE.Name = "btnRESTORE";
+            this.btnRESTORE.Size = new System.Drawing.Size(121, 37);
+            this.btnRESTORE.TabIndex = 7;
+            this.btnRESTORE.Text = "RESTORE";
+            this.btnRESTORE.UseVisualStyleBackColor = true;
+            this.btnRESTORE.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 701);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -240,6 +341,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -264,6 +366,15 @@
         private System.Windows.Forms.TextBox txtReceiver;
         private System.Windows.Forms.TextBox txtTransmit;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnNAME;
+        private System.Windows.Forms.Button btnADDRESS;
+        private System.Windows.Forms.Button btnVERSION;
+        private System.Windows.Forms.Button btnAT;
+        private System.Windows.Forms.Button btnRESTORE;
+        private System.Windows.Forms.Button btnROLE;
+        private System.Windows.Forms.Button btnUART;
+        private System.Windows.Forms.Button btnPASSWORD;
     }
 }
 
