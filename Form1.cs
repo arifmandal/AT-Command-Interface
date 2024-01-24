@@ -27,6 +27,8 @@ namespace AT_Commands_Control
 
             btnConnect.Enabled = true;
             btnDisconnect.Enabled = false;
+            cbComPort.Enabled = true;
+            prgStatusBar.Value = 0;
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -42,6 +44,9 @@ namespace AT_Commands_Control
                 serialPort1.Open();
                 btnConnect.Enabled = false;
                 btnDisconnect.Enabled = true;
+                cbComPort.Enabled = false;
+                lblStatus.Text = "SUCCESSFUL";
+                prgStatusBar.Value = 100;
 
 
             
@@ -51,6 +56,21 @@ namespace AT_Commands_Control
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnConnect.Enabled = true;
                 btnDisconnect.Enabled = false;
+                lblStatus.Text = "UNSUCCESSFUL";
+
+            }
+        }
+
+        private void btnDisconnect_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                serialPort1.Close();
+                btnConnect.Enabled = true;
+                btnDisconnect.Enabled = false;
+                cbComPort.Enabled = true;
+                lblStatus.Text = "UNSUCCESSFUL";
+                prgStatusBar.Value = 0;
 
             }
         }
