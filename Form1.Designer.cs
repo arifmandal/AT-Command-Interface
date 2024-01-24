@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbComPort = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbBaudrate = new System.Windows.Forms.ComboBox();
             this.btnConnect = new System.Windows.Forms.Button();
             this.btnDisconnect = new System.Windows.Forms.Button();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +44,7 @@
             // 
             this.groupBox1.Controls.Add(this.btnDisconnect);
             this.groupBox1.Controls.Add(this.btnConnect);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbBaudrate);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cbComPort);
             this.groupBox1.Controls.Add(this.label1);
@@ -80,14 +82,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Baudrate:";
             // 
-            // comboBox1
+            // cbBaudrate
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(99, 86);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(180, 28);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.Text = "38400";
+            this.cbBaudrate.Enabled = false;
+            this.cbBaudrate.FormattingEnabled = true;
+            this.cbBaudrate.Location = new System.Drawing.Point(99, 86);
+            this.cbBaudrate.Name = "cbBaudrate";
+            this.cbBaudrate.Size = new System.Drawing.Size(180, 28);
+            this.cbBaudrate.TabIndex = 3;
+            this.cbBaudrate.Text = "38400";
             // 
             // btnConnect
             // 
@@ -97,6 +100,7 @@
             this.btnConnect.TabIndex = 4;
             this.btnConnect.Text = "Connect";
             this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
             // 
             // btnDisconnect
             // 
@@ -115,6 +119,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "AT Commands Control";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -128,8 +133,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDisconnect;
         private System.Windows.Forms.Button btnConnect;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbBaudrate;
         private System.Windows.Forms.Label label2;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }
 
