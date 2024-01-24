@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.prgStatusBar = new System.Windows.Forms.ProgressBar();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnDisconnect = new System.Windows.Forms.Button();
             this.btnConnect = new System.Windows.Forms.Button();
             this.cbBaudrate = new System.Windows.Forms.ComboBox();
@@ -37,25 +40,22 @@
             this.cbComPort = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.prgStatusBar = new System.Windows.Forms.ProgressBar();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtTransmit = new System.Windows.Forms.TextBox();
-            this.txtReceiver = new System.Windows.Forms.TextBox();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.txtReceiver = new System.Windows.Forms.TextBox();
+            this.txtTransmit = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnAT = new System.Windows.Forms.Button();
-            this.btnVERSION = new System.Windows.Forms.Button();
-            this.btnADDRESS = new System.Windows.Forms.Button();
-            this.btnNAME = new System.Windows.Forms.Button();
-            this.btnPASSWORD = new System.Windows.Forms.Button();
-            this.btnUART = new System.Windows.Forms.Button();
-            this.btnROLE = new System.Windows.Forms.Button();
             this.btnRESTORE = new System.Windows.Forms.Button();
+            this.btnROLE = new System.Windows.Forms.Button();
+            this.btnUART = new System.Windows.Forms.Button();
+            this.btnPASSWORD = new System.Windows.Forms.Button();
+            this.btnNAME = new System.Windows.Forms.Button();
+            this.btnADDRESS = new System.Windows.Forms.Button();
+            this.btnVERSION = new System.Windows.Forms.Button();
+            this.btnAT = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -78,6 +78,32 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bluetooth Connection";
+            // 
+            // prgStatusBar
+            // 
+            this.prgStatusBar.Location = new System.Drawing.Point(218, 232);
+            this.prgStatusBar.Name = "prgStatusBar";
+            this.prgStatusBar.Size = new System.Drawing.Size(188, 23);
+            this.prgStatusBar.TabIndex = 8;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(238, 188);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(141, 20);
+            this.lblStatus.TabIndex = 7;
+            this.lblStatus.Text = "UNSUCCESSFUL";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(264, 149);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 29);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Status";
             // 
             // btnDisconnect
             // 
@@ -140,32 +166,6 @@
             // 
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(264, 149);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 29);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Status";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(238, 188);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(141, 20);
-            this.lblStatus.TabIndex = 7;
-            this.lblStatus.Text = "UNSUCCESSFUL";
-            // 
-            // prgStatusBar
-            // 
-            this.prgStatusBar.Location = new System.Drawing.Point(218, 232);
-            this.prgStatusBar.Name = "prgStatusBar";
-            this.prgStatusBar.Size = new System.Drawing.Size(188, 23);
-            this.prgStatusBar.TabIndex = 8;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnClear);
@@ -181,40 +181,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Transmit and Receiver";
             // 
-            // txtTransmit
+            // btnClear
             // 
-            this.txtTransmit.Location = new System.Drawing.Point(11, 61);
-            this.txtTransmit.Multiline = true;
-            this.txtTransmit.Name = "txtTransmit";
-            this.txtTransmit.Size = new System.Drawing.Size(175, 143);
-            this.txtTransmit.TabIndex = 0;
-            // 
-            // txtReceiver
-            // 
-            this.txtReceiver.Location = new System.Drawing.Point(218, 61);
-            this.txtReceiver.Multiline = true;
-            this.txtReceiver.Name = "txtReceiver";
-            this.txtReceiver.Size = new System.Drawing.Size(242, 143);
-            this.txtReceiver.TabIndex = 1;
-            // 
-            // btnSend
-            // 
-            this.btnSend.Location = new System.Drawing.Point(51, 226);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(79, 36);
-            this.btnSend.TabIndex = 2;
-            this.btnSend.Text = "Send";
-            this.btnSend.UseVisualStyleBackColor = true;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(68, 38);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Transmit";
+            this.btnClear.Location = new System.Drawing.Point(291, 226);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(79, 36);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // label5
             // 
@@ -226,15 +201,40 @@
             this.label5.Text = "Receiver";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnClear
+            // label4
             // 
-            this.btnClear.Location = new System.Drawing.Point(291, 226);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(79, 36);
-            this.btnClear.TabIndex = 5;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(68, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Transmit";
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(51, 226);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(79, 36);
+            this.btnSend.TabIndex = 2;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // txtReceiver
+            // 
+            this.txtReceiver.Location = new System.Drawing.Point(218, 61);
+            this.txtReceiver.Multiline = true;
+            this.txtReceiver.Name = "txtReceiver";
+            this.txtReceiver.Size = new System.Drawing.Size(242, 143);
+            this.txtReceiver.TabIndex = 1;
+            // 
+            // txtTransmit
+            // 
+            this.txtTransmit.Location = new System.Drawing.Point(11, 61);
+            this.txtTransmit.Multiline = true;
+            this.txtTransmit.Name = "txtTransmit";
+            this.txtTransmit.Size = new System.Drawing.Size(175, 143);
+            this.txtTransmit.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -253,69 +253,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "AT Commands";
             // 
-            // btnAT
-            // 
-            this.btnAT.Location = new System.Drawing.Point(22, 37);
-            this.btnAT.Name = "btnAT";
-            this.btnAT.Size = new System.Drawing.Size(121, 37);
-            this.btnAT.TabIndex = 0;
-            this.btnAT.Text = "AT";
-            this.btnAT.UseVisualStyleBackColor = true;
-            // 
-            // btnVERSION
-            // 
-            this.btnVERSION.Location = new System.Drawing.Point(22, 86);
-            this.btnVERSION.Name = "btnVERSION";
-            this.btnVERSION.Size = new System.Drawing.Size(121, 37);
-            this.btnVERSION.TabIndex = 1;
-            this.btnVERSION.Text = "VERSION";
-            this.btnVERSION.UseVisualStyleBackColor = true;
-            // 
-            // btnADDRESS
-            // 
-            this.btnADDRESS.Location = new System.Drawing.Point(22, 141);
-            this.btnADDRESS.Name = "btnADDRESS";
-            this.btnADDRESS.Size = new System.Drawing.Size(121, 37);
-            this.btnADDRESS.TabIndex = 2;
-            this.btnADDRESS.Text = "ADDRESS";
-            this.btnADDRESS.UseVisualStyleBackColor = true;
-            // 
-            // btnNAME
-            // 
-            this.btnNAME.Location = new System.Drawing.Point(22, 197);
-            this.btnNAME.Name = "btnNAME";
-            this.btnNAME.Size = new System.Drawing.Size(121, 37);
-            this.btnNAME.TabIndex = 3;
-            this.btnNAME.Text = "NAME";
-            this.btnNAME.UseVisualStyleBackColor = true;
-            // 
-            // btnPASSWORD
-            // 
-            this.btnPASSWORD.Location = new System.Drawing.Point(191, 37);
-            this.btnPASSWORD.Name = "btnPASSWORD";
-            this.btnPASSWORD.Size = new System.Drawing.Size(121, 37);
-            this.btnPASSWORD.TabIndex = 4;
-            this.btnPASSWORD.Text = "PASSWORD";
-            this.btnPASSWORD.UseVisualStyleBackColor = true;
-            // 
-            // btnUART
-            // 
-            this.btnUART.Location = new System.Drawing.Point(191, 89);
-            this.btnUART.Name = "btnUART";
-            this.btnUART.Size = new System.Drawing.Size(121, 37);
-            this.btnUART.TabIndex = 5;
-            this.btnUART.Text = "UART";
-            this.btnUART.UseVisualStyleBackColor = true;
-            // 
-            // btnROLE
-            // 
-            this.btnROLE.Location = new System.Drawing.Point(191, 141);
-            this.btnROLE.Name = "btnROLE";
-            this.btnROLE.Size = new System.Drawing.Size(121, 37);
-            this.btnROLE.TabIndex = 6;
-            this.btnROLE.Text = "ROLE";
-            this.btnROLE.UseVisualStyleBackColor = true;
-            // 
             // btnRESTORE
             // 
             this.btnRESTORE.Location = new System.Drawing.Point(191, 197);
@@ -325,6 +262,76 @@
             this.btnRESTORE.Text = "RESTORE";
             this.btnRESTORE.UseVisualStyleBackColor = true;
             this.btnRESTORE.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // btnROLE
+            // 
+            this.btnROLE.Location = new System.Drawing.Point(191, 141);
+            this.btnROLE.Name = "btnROLE";
+            this.btnROLE.Size = new System.Drawing.Size(121, 37);
+            this.btnROLE.TabIndex = 6;
+            this.btnROLE.Text = "ROLE";
+            this.btnROLE.UseVisualStyleBackColor = true;
+            this.btnROLE.Click += new System.EventHandler(this.btnROLE_Click);
+            // 
+            // btnUART
+            // 
+            this.btnUART.Location = new System.Drawing.Point(191, 89);
+            this.btnUART.Name = "btnUART";
+            this.btnUART.Size = new System.Drawing.Size(121, 37);
+            this.btnUART.TabIndex = 5;
+            this.btnUART.Text = "UART";
+            this.btnUART.UseVisualStyleBackColor = true;
+            this.btnUART.Click += new System.EventHandler(this.btnUART_Click);
+            // 
+            // btnPASSWORD
+            // 
+            this.btnPASSWORD.Location = new System.Drawing.Point(191, 37);
+            this.btnPASSWORD.Name = "btnPASSWORD";
+            this.btnPASSWORD.Size = new System.Drawing.Size(121, 37);
+            this.btnPASSWORD.TabIndex = 4;
+            this.btnPASSWORD.Text = "PASSWORD";
+            this.btnPASSWORD.UseVisualStyleBackColor = true;
+            this.btnPASSWORD.Click += new System.EventHandler(this.btnPASSWORD_Click);
+            // 
+            // btnNAME
+            // 
+            this.btnNAME.Location = new System.Drawing.Point(22, 197);
+            this.btnNAME.Name = "btnNAME";
+            this.btnNAME.Size = new System.Drawing.Size(121, 37);
+            this.btnNAME.TabIndex = 3;
+            this.btnNAME.Text = "NAME";
+            this.btnNAME.UseVisualStyleBackColor = true;
+            this.btnNAME.Click += new System.EventHandler(this.btnNAME_Click);
+            // 
+            // btnADDRESS
+            // 
+            this.btnADDRESS.Location = new System.Drawing.Point(22, 141);
+            this.btnADDRESS.Name = "btnADDRESS";
+            this.btnADDRESS.Size = new System.Drawing.Size(121, 37);
+            this.btnADDRESS.TabIndex = 2;
+            this.btnADDRESS.Text = "ADDRESS";
+            this.btnADDRESS.UseVisualStyleBackColor = true;
+            this.btnADDRESS.Click += new System.EventHandler(this.btnADDRESS_Click);
+            // 
+            // btnVERSION
+            // 
+            this.btnVERSION.Location = new System.Drawing.Point(22, 86);
+            this.btnVERSION.Name = "btnVERSION";
+            this.btnVERSION.Size = new System.Drawing.Size(121, 37);
+            this.btnVERSION.TabIndex = 1;
+            this.btnVERSION.Text = "VERSION";
+            this.btnVERSION.UseVisualStyleBackColor = true;
+            this.btnVERSION.Click += new System.EventHandler(this.btnVERSION_Click);
+            // 
+            // btnAT
+            // 
+            this.btnAT.Location = new System.Drawing.Point(22, 37);
+            this.btnAT.Name = "btnAT";
+            this.btnAT.Size = new System.Drawing.Size(121, 37);
+            this.btnAT.TabIndex = 0;
+            this.btnAT.Text = "AT";
+            this.btnAT.UseVisualStyleBackColor = true;
+            this.btnAT.Click += new System.EventHandler(this.btnAT_Click);
             // 
             // Form1
             // 

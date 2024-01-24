@@ -119,9 +119,102 @@ namespace AT_Commands_Control
 
         }
 
+
+        private void btnAT_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOut = "AT" + "\r\n";
+
+                byte[] byteData = Encoding.ASCII.GetBytes(dataOut);
+
+                serialPort1.Write(byteData, 0, byteData.Length);
+            }
+
+        }
+
+        private void btnVERSION_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOut = "AT+VERSION?" + "\r\n";
+
+                byte[] byteData = Encoding.ASCII.GetBytes(dataOut);
+
+                serialPort1.Write(byteData, 0, byteData.Length);
+            }
+        }
+
+        private void btnADDRESS_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOut = "AT+ADDR?" + "\r\n";
+
+                byte[] byteData = Encoding.ASCII.GetBytes(dataOut);
+
+                serialPort1.Write(byteData, 0, byteData.Length);
+            }
+        }
+
+        private void btnNAME_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOut = "AT+NAME?" + "\r\n";
+
+                byte[] byteData = Encoding.ASCII.GetBytes(dataOut);
+
+                serialPort1.Write(byteData, 0, byteData.Length);
+            }
+        }
+
+        private void btnPASSWORD_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOut = "AT+PSWD?" + "\r\n";
+
+                byte[] byteData = Encoding.ASCII.GetBytes(dataOut);
+
+                serialPort1.Write(byteData, 0, byteData.Length);
+            }
+        }
+
+        private void btnUART_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOut = "AT+UART?" + "\r\n";
+
+                byte[] byteData = Encoding.ASCII.GetBytes(dataOut);
+
+                serialPort1.Write(byteData, 0, byteData.Length);
+            }
+        }
+
+        private void btnROLE_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOut = "AT+ROLE?" + "\r\n";
+
+                byte[] byteData = Encoding.ASCII.GetBytes(dataOut);
+
+                serialPort1.Write(byteData, 0, byteData.Length);
+            }
+        }
+
         private void button8_Click(object sender, EventArgs e)
         {
+            if (serialPort1.IsOpen)
+            {
+                dataOut = "AT+ORGL" + "\r\n";
 
+                byte[] byteData = Encoding.ASCII.GetBytes(dataOut);
+
+                serialPort1.Write(byteData, 0, byteData.Length);
+            }
         }
     }
 }
