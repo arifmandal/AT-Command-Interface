@@ -41,11 +41,12 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.prgStatusBar = new System.Windows.Forms.ProgressBar();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtTransmit = new System.Windows.Forms.TextBox();
+            this.txtReceiver = new System.Windows.Forms.TextBox();
+            this.btnSend = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -125,6 +126,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "COM Port: ";
             // 
+            // serialPort1
+            // 
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -153,11 +158,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnClear);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.btnSend);
+            this.groupBox2.Controls.Add(this.txtReceiver);
+            this.groupBox2.Controls.Add(this.txtTransmit);
             this.groupBox2.Location = new System.Drawing.Point(24, 351);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(466, 311);
@@ -165,30 +171,31 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Transmit and Receiver";
             // 
-            // textBox1
+            // txtTransmit
             // 
-            this.textBox1.Location = new System.Drawing.Point(11, 61);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 143);
-            this.textBox1.TabIndex = 0;
+            this.txtTransmit.Location = new System.Drawing.Point(11, 61);
+            this.txtTransmit.Multiline = true;
+            this.txtTransmit.Name = "txtTransmit";
+            this.txtTransmit.Size = new System.Drawing.Size(175, 143);
+            this.txtTransmit.TabIndex = 0;
             // 
-            // textBox2
+            // txtReceiver
             // 
-            this.textBox2.Location = new System.Drawing.Point(256, 61);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(175, 143);
-            this.textBox2.TabIndex = 1;
+            this.txtReceiver.Location = new System.Drawing.Point(218, 61);
+            this.txtReceiver.Multiline = true;
+            this.txtReceiver.Name = "txtReceiver";
+            this.txtReceiver.Size = new System.Drawing.Size(242, 143);
+            this.txtReceiver.TabIndex = 1;
             // 
-            // button1
+            // btnSend
             // 
-            this.button1.Location = new System.Drawing.Point(51, 226);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Send";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSend.Location = new System.Drawing.Point(51, 226);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(79, 36);
+            this.btnSend.TabIndex = 2;
+            this.btnSend.Text = "Send";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // label4
             // 
@@ -202,12 +209,22 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(308, 38);
+            this.label5.Location = new System.Drawing.Point(287, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Receiver";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(291, 226);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(79, 36);
+            this.btnClear.TabIndex = 5;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // Form1
             // 
@@ -243,9 +260,10 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.TextBox txtReceiver;
+        private System.Windows.Forms.TextBox txtTransmit;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 

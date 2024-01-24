@@ -14,6 +14,8 @@ namespace AT_Commands_Control
 {
     public partial class Form1 : Form
     {
+        string dataOut;
+        string dataIn;
         public Form1()
         {
             InitializeComponent();
@@ -73,6 +75,48 @@ namespace AT_Commands_Control
                 prgStatusBar.Value = 0;
 
             }
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                dataOut = txtTransmit.Text + "\r\n";
+                byte[] byteData = Encoding.ASCII.GetBytes(dataOut);
+
+                serialPort1.Write(byteData, 0, byteData.Length);
+            }
+        }
+
+        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            try { 
+            int bytesToRead = serialPort1.BytesToRead;
+
+            byte[] buffer = new byte[bytesToRead];
+
+            serialPort1.Read(buffer, 0, bytesToRead);
+
+            dataIn = Encoding.ASCII.GetString(buffer);
+
+            this.Invoke(new Action(()=>{
+
+                txtReceiver.Text += dataIn + Environment.NewLine;
+
+
+            }));
+            
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtReceiver.Text = string.Empty; 
+
         }
     }
 }
