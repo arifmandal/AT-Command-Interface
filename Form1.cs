@@ -16,6 +16,9 @@ namespace AT_Commands_Control
     {
         string dataOut;
         string dataIn;
+        string BLName;
+        string BLPassword;
+        string BLParameters;
         public Form1()
         {
             InitializeComponent();
@@ -37,6 +40,9 @@ namespace AT_Commands_Control
             btnDisconnect.Enabled = false;
             cbComPort.Enabled = true;
             prgStatusBar.Value = 0;
+            grpTransmitReceiver.Enabled = false;
+            grpATCommands.Enabled = false;
+            grpChangeParameters.Enabled = false;
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -56,10 +62,15 @@ namespace AT_Commands_Control
                 lblStatus.Text = "SUCCESSFUL";
                 prgStatusBar.Value = 100;
 
+                grpTransmitReceiver.Enabled = true;
+                grpATCommands.Enabled = true;
+                grpChangeParameters.Enabled = true;
 
-            
-            
-            }catch(Exception ex)
+
+
+
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 btnConnect.Enabled = true;
@@ -79,6 +90,10 @@ namespace AT_Commands_Control
                 cbComPort.Enabled = true;
                 lblStatus.Text = "UNSUCCESSFUL";
                 prgStatusBar.Value = 0;
+
+                grpTransmitReceiver.Enabled = false;
+                grpATCommands.Enabled = false;
+                grpChangeParameters.Enabled = false;
 
             }
         }
@@ -225,9 +240,42 @@ namespace AT_Commands_Control
             }
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void btnChangeName_Click(object sender, EventArgs e)
         {
+            BLName = txtBLName.Text;
+            if (serialPort1.IsOpen)
+            {
+                dataOut = "AT+NAME=" + BLName + "\r\n";
+                byte[] byteData = Encoding.ASCII.GetBytes(dataOut);
+                serialPort1.Write(byteData, 0, byteData.Length);
+            }
 
+            txtBLName.Text = String.Empty;
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            BLPassword = txtBLPassword.Text;
+            if (serialPort1.IsOpen)
+            {
+                dataOut = "AT+PSWD=" + BLPassword + "\r\n";
+                byte[] byteData = Encoding.ASCII.GetBytes(dataOut);
+                serialPort1.Write(byteData, 0, byteData.Length);
+            }
+            txtBLPassword.Text = String.Empty;
+        }
+
+        private void btnChangeParameters_Click(object sender, EventArgs e)
+        {
+            BLParameters = txtBLUARTParameters.Text;
+            if (serialPort1.IsOpen)
+            {
+                dataOut = "AT+UART=" + BLParameters + "\r\n";
+                byte[] byteData = Encoding.ASCII.GetBytes(dataOut);
+                serialPort1.Write(byteData, 0, byteData.Length);
+            }
+
+            txtBLUARTParameters.Text = String.Empty;
         }
     }
 }

@@ -40,14 +40,14 @@
             this.cbComPort = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grpTransmitReceiver = new System.Windows.Forms.GroupBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
             this.txtReceiver = new System.Windows.Forms.TextBox();
             this.txtTransmit = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.grpATCommands = new System.Windows.Forms.GroupBox();
             this.btnRESTORE = new System.Windows.Forms.Button();
             this.btnROLE = new System.Windows.Forms.Button();
             this.btnUART = new System.Windows.Forms.Button();
@@ -56,7 +56,7 @@
             this.btnADDRESS = new System.Windows.Forms.Button();
             this.btnVERSION = new System.Windows.Forms.Button();
             this.btnAT = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.grpChangeParameters = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -66,10 +66,11 @@
             this.btnChangeName = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnChangeParameters = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.grpTransmitReceiver.SuspendLayout();
+            this.grpATCommands.SuspendLayout();
+            this.grpChangeParameters.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -177,20 +178,20 @@
             // 
             this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
             // 
-            // groupBox2
+            // grpTransmitReceiver
             // 
-            this.groupBox2.Controls.Add(this.btnClear);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.btnSend);
-            this.groupBox2.Controls.Add(this.txtReceiver);
-            this.groupBox2.Controls.Add(this.txtTransmit);
-            this.groupBox2.Location = new System.Drawing.Point(24, 351);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(466, 311);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Transmit and Receiver";
+            this.grpTransmitReceiver.Controls.Add(this.btnClear);
+            this.grpTransmitReceiver.Controls.Add(this.label5);
+            this.grpTransmitReceiver.Controls.Add(this.label4);
+            this.grpTransmitReceiver.Controls.Add(this.btnSend);
+            this.grpTransmitReceiver.Controls.Add(this.txtReceiver);
+            this.grpTransmitReceiver.Controls.Add(this.txtTransmit);
+            this.grpTransmitReceiver.Location = new System.Drawing.Point(24, 351);
+            this.grpTransmitReceiver.Name = "grpTransmitReceiver";
+            this.grpTransmitReceiver.Size = new System.Drawing.Size(466, 311);
+            this.grpTransmitReceiver.TabIndex = 1;
+            this.grpTransmitReceiver.TabStop = false;
+            this.grpTransmitReceiver.Text = "Transmit and Receiver";
             // 
             // btnClear
             // 
@@ -248,22 +249,22 @@
             this.txtTransmit.Size = new System.Drawing.Size(175, 143);
             this.txtTransmit.TabIndex = 0;
             // 
-            // groupBox3
+            // grpATCommands
             // 
-            this.groupBox3.Controls.Add(this.btnRESTORE);
-            this.groupBox3.Controls.Add(this.btnROLE);
-            this.groupBox3.Controls.Add(this.btnUART);
-            this.groupBox3.Controls.Add(this.btnPASSWORD);
-            this.groupBox3.Controls.Add(this.btnNAME);
-            this.groupBox3.Controls.Add(this.btnADDRESS);
-            this.groupBox3.Controls.Add(this.btnVERSION);
-            this.groupBox3.Controls.Add(this.btnAT);
-            this.groupBox3.Location = new System.Drawing.Point(565, 36);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(330, 272);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "AT Commands";
+            this.grpATCommands.Controls.Add(this.btnRESTORE);
+            this.grpATCommands.Controls.Add(this.btnROLE);
+            this.grpATCommands.Controls.Add(this.btnUART);
+            this.grpATCommands.Controls.Add(this.btnPASSWORD);
+            this.grpATCommands.Controls.Add(this.btnNAME);
+            this.grpATCommands.Controls.Add(this.btnADDRESS);
+            this.grpATCommands.Controls.Add(this.btnVERSION);
+            this.grpATCommands.Controls.Add(this.btnAT);
+            this.grpATCommands.Location = new System.Drawing.Point(565, 36);
+            this.grpATCommands.Name = "grpATCommands";
+            this.grpATCommands.Size = new System.Drawing.Size(330, 272);
+            this.grpATCommands.TabIndex = 2;
+            this.grpATCommands.TabStop = false;
+            this.grpATCommands.Text = "AT Commands";
             // 
             // btnRESTORE
             // 
@@ -345,23 +346,24 @@
             this.btnAT.UseVisualStyleBackColor = true;
             this.btnAT.Click += new System.EventHandler(this.btnAT_Click);
             // 
-            // groupBox4
+            // grpChangeParameters
             // 
-            this.groupBox4.Controls.Add(this.btnChangeParameters);
-            this.groupBox4.Controls.Add(this.btnChangePassword);
-            this.groupBox4.Controls.Add(this.btnChangeName);
-            this.groupBox4.Controls.Add(this.txtBLUARTParameters);
-            this.groupBox4.Controls.Add(this.txtBLPassword);
-            this.groupBox4.Controls.Add(this.txtBLName);
-            this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Location = new System.Drawing.Point(565, 351);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(537, 311);
-            this.groupBox4.TabIndex = 3;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Change Name or Password or Parameters";
+            this.grpChangeParameters.Controls.Add(this.label9);
+            this.grpChangeParameters.Controls.Add(this.btnChangeParameters);
+            this.grpChangeParameters.Controls.Add(this.btnChangePassword);
+            this.grpChangeParameters.Controls.Add(this.btnChangeName);
+            this.grpChangeParameters.Controls.Add(this.txtBLUARTParameters);
+            this.grpChangeParameters.Controls.Add(this.txtBLPassword);
+            this.grpChangeParameters.Controls.Add(this.txtBLName);
+            this.grpChangeParameters.Controls.Add(this.label8);
+            this.grpChangeParameters.Controls.Add(this.label7);
+            this.grpChangeParameters.Controls.Add(this.label6);
+            this.grpChangeParameters.Location = new System.Drawing.Point(565, 351);
+            this.grpChangeParameters.Name = "grpChangeParameters";
+            this.grpChangeParameters.Size = new System.Drawing.Size(537, 311);
+            this.grpChangeParameters.TabIndex = 3;
+            this.grpChangeParameters.TabStop = false;
+            this.grpChangeParameters.Text = "Change Name or Password or Parameters";
             // 
             // label6
             // 
@@ -410,7 +412,6 @@
             this.txtBLUARTParameters.Name = "txtBLUARTParameters";
             this.txtBLUARTParameters.Size = new System.Drawing.Size(175, 26);
             this.txtBLUARTParameters.TabIndex = 5;
-            this.txtBLUARTParameters.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // btnChangeName
             // 
@@ -420,6 +421,7 @@
             this.btnChangeName.TabIndex = 6;
             this.btnChangeName.Text = "Change Name";
             this.btnChangeName.UseVisualStyleBackColor = true;
+            this.btnChangeName.Click += new System.EventHandler(this.btnChangeName_Click);
             // 
             // btnChangePassword
             // 
@@ -429,6 +431,7 @@
             this.btnChangePassword.TabIndex = 7;
             this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // btnChangeParameters
             // 
@@ -438,26 +441,38 @@
             this.btnChangeParameters.TabIndex = 8;
             this.btnChangeParameters.Text = "Change Parameters";
             this.btnChangeParameters.UseVisualStyleBackColor = true;
+            this.btnChangeParameters.Click += new System.EventHandler(this.btnChangeParameters_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(9, 226);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(353, 20);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "(UART Baudrate, Stop Bit, Parity) ex: 115200,0,0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1144, 701);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grpChangeParameters);
+            this.Controls.Add(this.grpATCommands);
+            this.Controls.Add(this.grpTransmitReceiver);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "AT Commands Control";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.grpTransmitReceiver.ResumeLayout(false);
+            this.grpTransmitReceiver.PerformLayout();
+            this.grpATCommands.ResumeLayout(false);
+            this.grpChangeParameters.ResumeLayout(false);
+            this.grpChangeParameters.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -475,14 +490,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ProgressBar prgStatusBar;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grpTransmitReceiver;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.TextBox txtReceiver;
         private System.Windows.Forms.TextBox txtTransmit;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox grpATCommands;
         private System.Windows.Forms.Button btnNAME;
         private System.Windows.Forms.Button btnADDRESS;
         private System.Windows.Forms.Button btnVERSION;
@@ -491,7 +506,7 @@
         private System.Windows.Forms.Button btnROLE;
         private System.Windows.Forms.Button btnUART;
         private System.Windows.Forms.Button btnPASSWORD;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox grpChangeParameters;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Button btnChangeName;
         private System.Windows.Forms.TextBox txtBLUARTParameters;
@@ -501,6 +516,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnChangeParameters;
+        private System.Windows.Forms.Label label9;
     }
 }
 
