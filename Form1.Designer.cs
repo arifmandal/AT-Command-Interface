@@ -56,9 +56,20 @@
             this.btnADDRESS = new System.Windows.Forms.Button();
             this.btnVERSION = new System.Windows.Forms.Button();
             this.btnAT = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtBLName = new System.Windows.Forms.TextBox();
+            this.txtBLPassword = new System.Windows.Forms.TextBox();
+            this.txtBLUARTParameters = new System.Windows.Forms.TextBox();
+            this.btnChangeName = new System.Windows.Forms.Button();
+            this.btnChangePassword = new System.Windows.Forms.Button();
+            this.btnChangeParameters = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -225,6 +236,7 @@
             this.txtReceiver.Location = new System.Drawing.Point(218, 61);
             this.txtReceiver.Multiline = true;
             this.txtReceiver.Name = "txtReceiver";
+            this.txtReceiver.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtReceiver.Size = new System.Drawing.Size(242, 143);
             this.txtReceiver.TabIndex = 1;
             // 
@@ -261,7 +273,7 @@
             this.btnRESTORE.TabIndex = 7;
             this.btnRESTORE.Text = "RESTORE";
             this.btnRESTORE.UseVisualStyleBackColor = true;
-            this.btnRESTORE.Click += new System.EventHandler(this.button8_Click);
+            this.btnRESTORE.Click += new System.EventHandler(this.btnRESTORE_Click);
             // 
             // btnROLE
             // 
@@ -333,11 +345,106 @@
             this.btnAT.UseVisualStyleBackColor = true;
             this.btnAT.Click += new System.EventHandler(this.btnAT_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnChangeParameters);
+            this.groupBox4.Controls.Add(this.btnChangePassword);
+            this.groupBox4.Controls.Add(this.btnChangeName);
+            this.groupBox4.Controls.Add(this.txtBLUARTParameters);
+            this.groupBox4.Controls.Add(this.txtBLPassword);
+            this.groupBox4.Controls.Add(this.txtBLName);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Location = new System.Drawing.Point(565, 351);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(537, 311);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Change Name or Password or Parameters";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 65);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Name: ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 120);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 20);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Password:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 183);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(143, 20);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "UART Parameters:";
+            // 
+            // txtBLName
+            // 
+            this.txtBLName.Location = new System.Drawing.Point(169, 65);
+            this.txtBLName.Name = "txtBLName";
+            this.txtBLName.Size = new System.Drawing.Size(175, 26);
+            this.txtBLName.TabIndex = 3;
+            // 
+            // txtBLPassword
+            // 
+            this.txtBLPassword.Location = new System.Drawing.Point(169, 117);
+            this.txtBLPassword.Name = "txtBLPassword";
+            this.txtBLPassword.Size = new System.Drawing.Size(175, 26);
+            this.txtBLPassword.TabIndex = 4;
+            // 
+            // txtBLUARTParameters
+            // 
+            this.txtBLUARTParameters.Location = new System.Drawing.Point(169, 177);
+            this.txtBLUARTParameters.Name = "txtBLUARTParameters";
+            this.txtBLUARTParameters.Size = new System.Drawing.Size(175, 26);
+            this.txtBLUARTParameters.TabIndex = 5;
+            this.txtBLUARTParameters.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // btnChangeName
+            // 
+            this.btnChangeName.Location = new System.Drawing.Point(360, 62);
+            this.btnChangeName.Name = "btnChangeName";
+            this.btnChangeName.Size = new System.Drawing.Size(171, 33);
+            this.btnChangeName.TabIndex = 6;
+            this.btnChangeName.Text = "Change Name";
+            this.btnChangeName.UseVisualStyleBackColor = true;
+            // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.Location = new System.Drawing.Point(360, 114);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(171, 33);
+            this.btnChangePassword.TabIndex = 7;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.UseVisualStyleBackColor = true;
+            // 
+            // btnChangeParameters
+            // 
+            this.btnChangeParameters.Location = new System.Drawing.Point(360, 174);
+            this.btnChangeParameters.Name = "btnChangeParameters";
+            this.btnChangeParameters.Size = new System.Drawing.Size(171, 33);
+            this.btnChangeParameters.TabIndex = 8;
+            this.btnChangeParameters.Text = "Change Parameters";
+            this.btnChangeParameters.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 701);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -349,6 +456,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -382,6 +491,16 @@
         private System.Windows.Forms.Button btnROLE;
         private System.Windows.Forms.Button btnUART;
         private System.Windows.Forms.Button btnPASSWORD;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnChangePassword;
+        private System.Windows.Forms.Button btnChangeName;
+        private System.Windows.Forms.TextBox txtBLUARTParameters;
+        private System.Windows.Forms.TextBox txtBLPassword;
+        private System.Windows.Forms.TextBox txtBLName;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnChangeParameters;
     }
 }
 

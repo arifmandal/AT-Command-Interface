@@ -23,6 +23,12 @@ namespace AT_Commands_Control
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            VScrollBar vScrollBar = new VScrollBar();
+            vScrollBar.Dock = DockStyle.Right;
+            vScrollBar.Scroll += (s, ev) => { txtReceiver.SelectionStart = (int)((VScrollBar)s).Value; };
+            Controls.Add(vScrollBar);
+            txtReceiver.ScrollBars = ScrollBars.None;
+
             String[] ports = SerialPort.GetPortNames();
             cbComPort.Items.AddRange(ports);
 
@@ -102,6 +108,8 @@ namespace AT_Commands_Control
             this.Invoke(new Action(()=>{
 
                 txtReceiver.Text += dataIn + Environment.NewLine;
+                txtReceiver.SelectionStart = txtReceiver.TextLength;
+                txtReceiver.ScrollToCaret();
 
 
             }));
@@ -205,7 +213,7 @@ namespace AT_Commands_Control
             }
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void btnRESTORE_Click(object sender, EventArgs e)
         {
             if (serialPort1.IsOpen)
             {
@@ -215,6 +223,11 @@ namespace AT_Commands_Control
 
                 serialPort1.Write(byteData, 0, byteData.Length);
             }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
