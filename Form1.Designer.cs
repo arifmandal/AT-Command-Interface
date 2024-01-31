@@ -68,6 +68,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.grpTransmitReceiver.SuspendLayout();
             this.grpATCommands.SuspendLayout();
@@ -76,6 +78,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.prgStatusBar);
             this.groupBox1.Controls.Add(this.lblStatus);
             this.groupBox1.Controls.Add(this.label3);
@@ -453,12 +456,33 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Name: ";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackgroundImage = global::AT_Commands_Control.Properties.Resources.refresh_icon_transparent;
+            this.btnRefresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnRefresh.Location = new System.Drawing.Point(285, 33);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(39, 31);
+            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Location = new System.Drawing.Point(431, 672);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(202, 20);
+            this.lblVersion.TabIndex = 4;
+            this.lblVersion.Text = "AT Commands Control v1.0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1144, 701);
+            this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.grpChangeParameters);
             this.Controls.Add(this.grpATCommands);
             this.Controls.Add(this.grpTransmitReceiver);
@@ -477,6 +501,7 @@
             this.grpChangeParameters.ResumeLayout(false);
             this.grpChangeParameters.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -520,6 +545,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnChangeParameters;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label lblVersion;
     }
 }
 

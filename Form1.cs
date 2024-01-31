@@ -14,6 +14,7 @@ namespace AT_Commands_Control
 {
     public partial class Form1 : Form
     {
+        string version = "v1.0";
         string dataOut;
         string dataIn;
         string BLName;
@@ -43,6 +44,8 @@ namespace AT_Commands_Control
             grpTransmitReceiver.Enabled = false;
             grpATCommands.Enabled = false;
             grpChangeParameters.Enabled = false;
+
+            lblVersion.Text = "AT Commands Control " + version; 
         }
 
         private void btnConnect_Click(object sender, EventArgs e)
@@ -276,6 +279,13 @@ namespace AT_Commands_Control
             }
 
             txtBLUARTParameters.Text = String.Empty;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            cbComPort.Items.Clear();
+            String[] ports = SerialPort.GetPortNames();
+            cbComPort.Items.AddRange(ports);
         }
     }
 }
