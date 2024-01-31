@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.prgStatusBar = new System.Windows.Forms.ProgressBar();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -57,16 +58,16 @@
             this.btnVERSION = new System.Windows.Forms.Button();
             this.btnAT = new System.Windows.Forms.Button();
             this.grpChangeParameters = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtBLName = new System.Windows.Forms.TextBox();
-            this.txtBLPassword = new System.Windows.Forms.TextBox();
-            this.txtBLUARTParameters = new System.Windows.Forms.TextBox();
-            this.btnChangeName = new System.Windows.Forms.Button();
-            this.btnChangePassword = new System.Windows.Forms.Button();
-            this.btnChangeParameters = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnChangeParameters = new System.Windows.Forms.Button();
+            this.btnChangePassword = new System.Windows.Forms.Button();
+            this.btnChangeName = new System.Windows.Forms.Button();
+            this.txtBLUARTParameters = new System.Windows.Forms.TextBox();
+            this.txtBLPassword = new System.Windows.Forms.TextBox();
+            this.txtBLName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.grpTransmitReceiver.SuspendLayout();
             this.grpATCommands.SuspendLayout();
@@ -365,73 +366,14 @@
             this.grpChangeParameters.TabStop = false;
             this.grpChangeParameters.Text = "Change Name or Password or Parameters";
             // 
-            // label6
+            // label9
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 65);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 20);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Name: ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 120);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Password:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 183);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 20);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "UART Parameters:";
-            // 
-            // txtBLName
-            // 
-            this.txtBLName.Location = new System.Drawing.Point(169, 65);
-            this.txtBLName.Name = "txtBLName";
-            this.txtBLName.Size = new System.Drawing.Size(175, 26);
-            this.txtBLName.TabIndex = 3;
-            // 
-            // txtBLPassword
-            // 
-            this.txtBLPassword.Location = new System.Drawing.Point(169, 117);
-            this.txtBLPassword.Name = "txtBLPassword";
-            this.txtBLPassword.Size = new System.Drawing.Size(175, 26);
-            this.txtBLPassword.TabIndex = 4;
-            // 
-            // txtBLUARTParameters
-            // 
-            this.txtBLUARTParameters.Location = new System.Drawing.Point(169, 177);
-            this.txtBLUARTParameters.Name = "txtBLUARTParameters";
-            this.txtBLUARTParameters.Size = new System.Drawing.Size(175, 26);
-            this.txtBLUARTParameters.TabIndex = 5;
-            // 
-            // btnChangeName
-            // 
-            this.btnChangeName.Location = new System.Drawing.Point(360, 62);
-            this.btnChangeName.Name = "btnChangeName";
-            this.btnChangeName.Size = new System.Drawing.Size(171, 33);
-            this.btnChangeName.TabIndex = 6;
-            this.btnChangeName.Text = "Change Name";
-            this.btnChangeName.UseVisualStyleBackColor = true;
-            this.btnChangeName.Click += new System.EventHandler(this.btnChangeName_Click);
-            // 
-            // btnChangePassword
-            // 
-            this.btnChangePassword.Location = new System.Drawing.Point(360, 114);
-            this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(171, 33);
-            this.btnChangePassword.TabIndex = 7;
-            this.btnChangePassword.Text = "Change Password";
-            this.btnChangePassword.UseVisualStyleBackColor = true;
-            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(9, 226);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(353, 20);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "(UART Baudrate, Stop Bit, Parity) ex: 115200,0,0";
             // 
             // btnChangeParameters
             // 
@@ -443,14 +385,73 @@
             this.btnChangeParameters.UseVisualStyleBackColor = true;
             this.btnChangeParameters.Click += new System.EventHandler(this.btnChangeParameters_Click);
             // 
-            // label9
+            // btnChangePassword
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 226);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(353, 20);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "(UART Baudrate, Stop Bit, Parity) ex: 115200,0,0";
+            this.btnChangePassword.Location = new System.Drawing.Point(360, 114);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(171, 33);
+            this.btnChangePassword.TabIndex = 7;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            // 
+            // btnChangeName
+            // 
+            this.btnChangeName.Location = new System.Drawing.Point(360, 62);
+            this.btnChangeName.Name = "btnChangeName";
+            this.btnChangeName.Size = new System.Drawing.Size(171, 33);
+            this.btnChangeName.TabIndex = 6;
+            this.btnChangeName.Text = "Change Name";
+            this.btnChangeName.UseVisualStyleBackColor = true;
+            this.btnChangeName.Click += new System.EventHandler(this.btnChangeName_Click);
+            // 
+            // txtBLUARTParameters
+            // 
+            this.txtBLUARTParameters.Location = new System.Drawing.Point(169, 177);
+            this.txtBLUARTParameters.Name = "txtBLUARTParameters";
+            this.txtBLUARTParameters.Size = new System.Drawing.Size(175, 26);
+            this.txtBLUARTParameters.TabIndex = 5;
+            // 
+            // txtBLPassword
+            // 
+            this.txtBLPassword.Location = new System.Drawing.Point(169, 117);
+            this.txtBLPassword.Name = "txtBLPassword";
+            this.txtBLPassword.Size = new System.Drawing.Size(175, 26);
+            this.txtBLPassword.TabIndex = 4;
+            // 
+            // txtBLName
+            // 
+            this.txtBLName.Location = new System.Drawing.Point(169, 65);
+            this.txtBLName.Name = "txtBLName";
+            this.txtBLName.Size = new System.Drawing.Size(175, 26);
+            this.txtBLName.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 183);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(143, 20);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "UART Parameters:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 120);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 20);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Password:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 65);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 20);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Name: ";
             // 
             // Form1
             // 
@@ -462,8 +463,10 @@
             this.Controls.Add(this.grpATCommands);
             this.Controls.Add(this.grpTransmitReceiver);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AT Commands Control";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
